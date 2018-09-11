@@ -2,67 +2,19 @@
 
 namespace AppBundle\Controller;
 
-use Exception;
-use AppBundle\Entity\City;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Exception;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\City;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\Type;
 
 /**
  * @Route(name="city_", path="/city")
  */
 class CityController extends Controller
 {
-    /**
-     * @Route(name="new", path="/new")
-     */
-    public function newAction(Request $request)
-    {
-        /// ici on a tout mis dans le controller : pas bien.
-        ///
-        /// la construction du formulaire (donc formBuilder) doit etre en
-        /// fait envoyée dans une classs form héritant de abstract form.
-        ///
-        /// De meme les contraintes peuvent etre déplacées au niveau de
-        ///  l'entité directement.
-        $city = new City();
-
-        $form = $this
-            ->createFormBuilder($city)
-            ->add('name', TextType::class, [
-                'constraints'=>new Length(['max'=>10])
-            ])
-            ->add('population', IntegerType::class, [
-                'constraints'=>new Type(['type'=>'integer'])
-            ])
-            ->getForm()
-        ;
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            $entitymanager = $this
-                ->getDoctrine()
-                ->getManager()
-            ;
-            $entitymanager->persist($city);
-            $entitymanager->flush();
-        }
-
-        dump($city);
-
-        return $this->render('city/new.html.twig', [
-            'form' => $form->createView()
-        ]);
-    }
-
     /**
      * Je restreins cette route grâce à une regex dans requirements
      * (ici un nombre "d+")
@@ -183,10 +135,10 @@ DQL;
     public function loadAction()
     {
         $cities = [
-          ['Nantes', 200000],
-          ['Rennes', 160000],
-          ['La Roche sur Yon', 60000],
-          ['Angers', 80000],
+            ['Nantes', 200000],
+            ['Rennes', 160000],
+            ['La Roche sur Yon', 60000],
+            ['Angers', 80000],
         ];
 
         $entitymanager = $this
@@ -196,7 +148,7 @@ DQL;
 
         foreach ($cities as $data)
         {
-            $city = new City();
+            $city = new city();
             $city->setName($data[0]);
             $city->setPopulation($data[1]);
             //ici on fait un petit persist mais surtout pas de flush

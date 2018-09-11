@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}       {{ parent() }} - City list  {% endblock %}
+{% block stylesheets %} {{ parent() }}          {% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Population</th>
+                    </tr>
+                    {%  for city in cities %}
+                        <tr>
+                            <td>{{ city.name }}</td>
+                            <td>{{ city.population }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

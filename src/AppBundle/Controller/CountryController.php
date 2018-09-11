@@ -2,17 +2,44 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Repository\CountryRepository;
+use AppBundle\Entity\Country;
+use AppBundle\Form\CountryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
-use AppBundle\Entity\Country;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route(name="country_", path="/country")
  */
 class CountryController extends Controller
 {
+    /**
+     * @Route(name="new", path="/new")
+     */
+    public function newAction(Request $request)
+    {
+        $country = new Country();
+
+        $form = $this->createForm(CountryType::class, $country);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $entitymanager = $this
+                ->getDoctrine()
+                ->getManager()
+            ;
+            $entitymanager->persist($country);
+            $entitymanager->flush();
+        }
+
+        return $this->render('country/new.html.twig', [
+            'form'=>$form->createView()
+        ]);
+    }
+
     /**
      * @Route(name="add", path="/add/{countryName}")
      */

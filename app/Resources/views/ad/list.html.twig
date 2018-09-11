@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}       {{ parent() }} - Ads list  {% endblock %}
+{% block stylesheets %} {{ parent() }}          {% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <table>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Prix</th>
+                    </tr>
+                    {%  for ad in ads %}
+                        <tr>
+                            <td>{{ ad.title }}</td>
+                            <td>{{ ad.price }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

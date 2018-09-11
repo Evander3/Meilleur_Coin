@@ -52,14 +52,15 @@ class Ad
     /**
      * @var string
      *
-     * @ORM\Column(name="price", type="decimal", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="price", type="decimal", precision=10, scale=2, nullable=true)
      */
     private $price;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datecreated", type="datetime")
+     * @ORM\Column(name="datecreated", type="datetime", options={"default":"CURRENT_TIMESTAMP"}, nullable=true)
+     *
      */
     private $datecreated;
 
@@ -177,7 +178,7 @@ class Ad
      *
      * @return Ad
      */
-    public function setPrice($price)
+    public function setPrice(float $price)
     {
         $this->price = $price;
 

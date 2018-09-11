@@ -35,6 +35,13 @@ class City
      */
     private $description;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="population", type="integer", nullable=false)
+     */
+    private $population;
+
 
     /**
      * Get id
@@ -92,6 +99,30 @@ class City
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set population
+     *
+     * @param integer $population
+     *
+     * @return City
+     */
+    public function setPopulation($population)
+    {
+        $this->population = $population;
+
+        return $this;
+    }
+
+    /**
+     * Get population
+     *
+     * @return integer
+     */
+    public function getPopulation()
+    {
+        return $this->population;
     }
 }
 

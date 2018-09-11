@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Country
@@ -25,6 +26,8 @@ class Country
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, unique=true)
+     * @Assert\Length(max="5")
+     * @Assert\NotBlank()
      */
     private $name;
 
