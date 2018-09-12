@@ -4,6 +4,8 @@ namespace AppBundle\Controller;
 
 use Exception;
 use AppBundle\Entity\City;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -13,12 +15,39 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Type;
+use Symfony\Component\Validator\Constraints\Country;
 
 /**
  * @Route(name="city_", path="/city")
  */
 class CityController extends Controller
 {
+    /**
+     * @Route(name="addCities", path="/add-cities")
+     */
+    public function addCitiesAction()
+    {
+        $country = $this
+            ->getDoctrine()
+            ->getRepository(Country::class)
+            ->find(5)
+        ;
+        $entitymanager = $this
+            ->getDoctrine()
+            ->getManager()
+        ;
+
+        $ville1 = new City();
+        $ville1->setName('Ville 1');
+        $ville1->setPopulation(57681);
+
+        $country->addCity($ville1);
+
+        $entitymanager->persist($country);
+        $entitymanager->flush();
+
+    }
+
     /**
      * @Route(name="new", path="/new")
      */
@@ -41,13 +70,30 @@ class CityController extends Controller
             ->add('population', IntegerType::class, [
                 'constraints'=>new Type(['type'=>'integer'])
             ])
+            ->add('country', EntityType::class, [
+                'class'=>Country::class,
+                'choice_label'=>'name',
+                'placeholder'=>' -- Choisir Pays -- ',
+            ])
+            ->add('terms', CheckboxType::class, [
+                'label'=>"J'accepte que ma ville soit sauvegarder",
+                // on peut avoir besoin de champ on-the-fly dans le formulaire
+                // qui ne servent qu'à la validation du formulaire et de ne pas
+                // garder ces données en base
+                'mapped'=>false,
+                'required'=>false,
+            ])
             ->getForm()
         ;
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid())
+        if ($form->isSubmitted()
+            && $form->isValid()
+            && $form->get('terms')->getData()
+        )
         {
+            dump($form->getData());
             $entitymanager = $this
                 ->getDoctrine()
                 ->getManager()
@@ -194,11 +240,19 @@ DQL;
             ->getManager()
         ;
 
+        $belgique = $this
+            ->getDoctrine()
+            ->getRepository(Country::class)
+            ->find(5)
+        ;
+
         foreach ($cities as $data)
         {
             $city = new City();
             $city->setName($data[0]);
             $city->setPopulation($data[1]);
+            $city->setCountry($belgique);
+
             //ici on fait un petit persist mais surtout pas de flush
             $entitymanager->persist($city);
         }

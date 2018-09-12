@@ -24,7 +24,13 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/gaufrette" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nyholm/nsa" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-translation/common" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-translation/extractor" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-translation/symfony-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-translation/symfony-storage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/link" />
@@ -47,6 +53,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/symfony" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

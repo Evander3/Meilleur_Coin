@@ -45,7 +45,14 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
       <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/php-translation/extractor" />
+      <path value="$PROJECT_DIR$/vendor/php-translation/symfony-storage" />
+      <path value="$PROJECT_DIR$/vendor/php-translation/common" />
+      <path value="$PROJECT_DIR$/vendor/php-translation/symfony-bundle" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/nsa" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
 </project>

@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -38,6 +40,10 @@ class Country
      */
     private $description;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\City", mappedBy="country")
+     */
+    private $cities;
 
     /**
      * Get id
@@ -95,6 +101,30 @@ class Country
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * le tostring de la classe
+     */
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return ucfirst($this->name);
+    }
+
+    public function __construct()
+    {
+        $this->cities = new ArrayCollection();
+    }
+
+    public function addCity(City $city)
+    {
+        $this->cities->add($city);
+    }
+
+    public function getCities(): Collection
+    {
+        return $this->cities;
     }
 }
 

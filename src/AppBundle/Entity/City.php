@@ -42,6 +42,11 @@ class City
      */
     private $population;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Country", inversedBy="cities", cascade={"persist"})
+     */
+    private $country;
+
 
     /**
      * Get id
@@ -123,6 +128,30 @@ class City
     public function getPopulation()
     {
         return $this->population;
+    }
+
+    /**
+     * Set country
+     *
+     * @param integer $population
+     *
+     * @return Country
+     */
+    public function setCountry(Country $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return ?Country
+     */
+    public function getCountry(): ?Country
+    {
+        return $this->country;
     }
 }
 

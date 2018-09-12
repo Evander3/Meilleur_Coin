@@ -1,3 +1,9 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+# the following is taken from the official doc, to include the locale in the URL
+index:
+    path:     /{_locale}/index
+    defaults: { _controller: AppBundle:Controller:HomeController }
+    requirements:
+        _locale: en|fr

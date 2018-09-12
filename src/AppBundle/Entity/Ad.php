@@ -64,6 +64,11 @@ class Ad
      */
     private $datecreated;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
+     */
+    private $category;
+
 
     /**
      * Get id
@@ -217,6 +222,30 @@ class Ad
     public function getDatecreated()
     {
         return $this->datecreated;
+    }
+
+    /**
+     * Set Category
+     *
+     * @param integer $population
+     *
+     * @return Country
+     */
+    public function setCategory(Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return ?Country
+     */
+    public function getCategory(): ?Category
+    {
+        return $this->category;
     }
 }
 

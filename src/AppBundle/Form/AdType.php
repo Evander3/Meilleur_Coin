@@ -2,6 +2,8 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\Category;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -17,12 +19,27 @@ class AdType extends AbstractType
     {
         return $builder
             ->add('title', TextType::class, [
-                'required'=>false
+                'required'=>false,
+                'label'=>'AdForm.title',
             ])
-            ->add('description', TextareaType::class)
-            ->add('city', TextType::class)
-            ->add('zip', IntegerType::class)
-            ->add('price', MoneyType ::class)
+            ->add('description', TextareaType::class, [
+                'label'=>'AdForm.description',
+            ])
+            ->add('city', TextType::class, [
+                'label'=>'AdForm.city',
+            ])
+            ->add('zip', IntegerType::class, [
+                'label'=>'AdForm.zip',
+            ])
+            ->add('price', MoneyType ::class, [
+                'label'=>'AdForm.price',
+            ])
+            ->add('category', EntityType::class, [
+                'class'=>Category::class,
+                'choice_label'=>'NameCapitalized',
+                'label'=>'AdForm.category',
+                'placeholder'=>'AdForm.placeholder',
+            ])
             ->getForm()
         ;
     }
