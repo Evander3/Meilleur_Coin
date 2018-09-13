@@ -50,31 +50,6 @@ class AdController extends Controller
     }
 
     /**
-     * @Route(name="add", path="/add/{adName}")
-     */
-    public function addAction($adName)
-    {
-        $entitymanager = $this
-            ->getDoctrine()
-            ->getManager()
-        ;
-        $ad = new Ad();
-        $ad->setTitle($adName);
-        $ad->setDescription("C'est vraiment très très bien !");
-        $ad->setCity('Saint-Herblain');
-        $ad->setZip(44480);
-        $ad->setPrice(2250);
-        $objDateTime = new DateTime('NOW');
-        $objDateTime->format('Y-m-d');
-        $ad->setDatecreated($objDateTime);
-
-        $entitymanager->persist($ad);
-        $entitymanager->flush();
-
-        return new Response("Added the ad $adName");
-    }
-
-    /**
      * @Route(name="edit", path="/edit/{id}")
      */
     public function editAction($id)
@@ -117,6 +92,14 @@ class AdController extends Controller
         return $this->render('ad/list.html.twig',
             ['ads'=> $ads]
         );
+    }
+
+    /**
+     * @Route(name="search", path="/search")
+     */
+    public function searchAction()
+    {
+        return new Response('<html><body>search functionality is being worked on</body></html>');
     }
 
     /**

@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}       {{ parent() }} - Ads list  {% endblock %}
-{% block stylesheets %} {{ parent() }}          {% endblock %}
+{% block title %}{{ parent() }} {{ "Main.Separator"|trans({},'messages') }} {{ "AdList.PageTitle"|trans }}{% endblock %}
+
+{% trans_default_domain 'ads' %}
 
 {% block body %}
     <div id="wrapper">
         <div id="container">
+            <h1>{{ "AdList.Title"|trans }}</h1>
             <div id="welcome">
                 <table>
                     <tr>
-                        <th>Titre</th>
-                        <th>Prix</th>
+                        <th>{{ "AdList.Name"|trans }}</th>
+                        <th>{{ "AdList.Price"|trans }}</th>
                     </tr>
                     {%  for ad in ads %}
                         <tr>

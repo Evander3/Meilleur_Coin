@@ -14,26 +14,32 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends Controller
 {
 
-//    /**
-//     * @Route(name="localIndex", path="/index")
-//     */
-//    public function showIndexAction(Request $request)
-//    {
-//        $locale = $request->getLocale();
-//        return $this->redirectToRoute('home_localIndex');
-//    }
+    /**
+     * @Route(name="faq", path="/faq")
+     */
+    public function faqAction()
+    {
+        return new Response("<html><body>You're on the FAQ page, congratulations !</body></html>");
+    }
 
     /**
-     * @Route(name="showIndex", path="/{_locale}/index")
+     * @Route(name="cgu", path="/cgu")
      */
-    public function showIndexAction(Request $request)
+    public function cguAction()
     {
-        $locale = $request->getLocale();
+        return new Response("<html><body>You're on the CGU page, congratulations !</body></html>");
+    }
+
+    /**
+     * @Route(name="showIndex", path="/index")
+     */
+    public function showIndexAction()
+    {
         return $this->render('index/index.html.twig');
     }
 
     /**
-     * @Route(name="gotoIndex", path="/{slug}")
+     * @Route(name="gotoIndex", path="/")
      */
     public function gotoIndexAction()
     {

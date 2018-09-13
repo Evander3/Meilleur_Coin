@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Country;
 use AppBundle\Form\CountryType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,9 +17,12 @@ class CountryController extends Controller
 {
     /**
      * @Route(name="new", path="/new")
+     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         $country = new Country();
 
         $form = $this->createForm(CountryType::class, $country);
@@ -38,6 +42,22 @@ class CountryController extends Controller
         return $this->render('country/new.html.twig', [
             'form'=>$form->createView()
         ]);
+    }
+
+    /**
+     * @Route(name="list", path="/list")
+     */
+    public function listAction()
+    {
+        $countries = $this
+            ->getDoctrine()
+            ->getRepository(Country::class)
+            ->findAll()
+        ;
+
+        return $this->render('country/list.html.twig',
+            ['countries'=> $countries]
+        );
     }
 
     /**

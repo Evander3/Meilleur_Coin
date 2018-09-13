@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en"
+          target-language="fr"
+          datatype="plaintext"
+          original="file.ext">
+        <body>
+            <!--syntax :-->
+            <!--{{ "defaultLoc"|trans }}            -->
+
+            <!--NAVBAR RELATED LOCS-->
+            <trans-unit id="Navbar.ToggleNavigation">
+                <source>Navbar.ToggleNavigation</source>
+                <target>Navigation</target>
+            </trans-unit>
+            <trans-unit id="Navbar.HomeLabel">
+                <source>Navbar.HomeLabel</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="Navbar.AddAdLabel">
+                <source>Navbar.AddAdLabel</source>
+                <target>Déposer une annonce</target>
+            </trans-unit>
+            <trans-unit id="Navbar.ListAdLabel">
+                <source>Navbar.ListAdLabel</source>
+                <target>Lister annonces</target>
+            </trans-unit>
+            <trans-unit id="Navbar.SearchAdLabel">
+                <source>Navbar.SearchAdLabel</source>
+                <target>Chercher annonces</target>
+            </trans-unit>
+            <trans-unit id="Navbar.UserSignUpLabel">
+                <source>Navbar.UserSignUpLabel</source>
+                <target>S'Inscrire</target>
+            </trans-unit>
+            <trans-unit id="Navbar.UserSignInLabel">
+                <source>Navbar.UserSignInLabel</source>
+                <target>Se Connecter</target>
+            </trans-unit>
+            <trans-unit id="Navbar.UserMyAdsLabel">
+                <source>Navbar.UserMyAdsLabel</source>
+                <target>Mes Annonces</target>
+            </trans-unit>
+            <trans-unit id="Navbar.UserFavoritesLabel">
+                <source>Navbar.UserFavoritesLabel</source>
+                <target>Mes Favoris</target>
+            </trans-unit>
+            <trans-unit id="Navbar.HomeFaqLabel">
+                <source>Navbar.HomeFaqLabel</source>
+                <target>F.A.Q.</target>
+            </trans-unit>
+            <trans-unit id="Navbar.HomeCguLabel">
+                <source>Navbar.HomeCguLabel</source>
+                <target>Conditions</target>
+            </trans-unit>
+            <trans-unit id="Navbar.AdLabel">
+                <source>Navbar.AdLabel</source>
+                <target>Annonces</target>
+            </trans-unit>
+            <trans-unit id="Navbar.DropdownLabel">
+                <source>Navbar.DropdownLabel</source>
+                <target>Menu déroulant</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

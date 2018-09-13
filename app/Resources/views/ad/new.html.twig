@@ -1,21 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}       {{ parent() }} - Déposer une annonce  {% endblock %}
-{% block stylesheets %} {{ parent() }}          {% endblock %}
+    {% block title %}
+        {{ parent() }} Main.Separator AdNew.Title
+    {% endblock %}
 
-{% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                {{ form_start((form)) }}
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
 
-                {{ form_widget(form) }}
-                <input type="submit" name="send">
+    {% block navbar %}
+        {{ parent() }}
+    {% endblock %}
 
-                {{ form_end(form) }}
+    {% block body %}
+        <div id="wrapper">
+            <div id="container">
+                <div id="welcome">
+                    {{ form_start((form)) }}
+
+                    {{ form_widget(form) }}
+                    <input type="submit" name="send">
+
+                    {{ form_end(form) }}
+                </div>
+
             </div>
-
         </div>
-    </div>
-{% endblock %}
+    {% endblock %}
 

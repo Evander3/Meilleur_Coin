@@ -1,6 +1,9 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+logout:
+  path: /logout
 # the following is taken from the official doc, to include the locale in the URL
 index:
     path:     /{_locale}/index

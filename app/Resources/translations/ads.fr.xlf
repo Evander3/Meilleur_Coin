@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en"
+          target-language="fr"
+          datatype="plaintext"
+          original="file.ext">
+        <body>
+        <!--syntax :-->
+        <!--{{ "defaultLoc"|trans }}            -->
+
+        <!--ADS LIST RELATED LOCS-->
+
+        <trans-unit id="AdList.PageTitle">
+            <source>AdList.Title</source>
+            <target>Liste des annonces</target>
+        </trans-unit>
+        <trans-unit id="AdList.Title">
+            <source>AdList.Title</source>
+            <target>Liste des annonces</target>
+        </trans-unit>
+        <trans-unit id="AdList.Name">
+            <source>AdList.Name</source>
+            <target>Nom de l'annonce</target>
+        </trans-unit>
+        <trans-unit id="AdList.Price">
+            <source>AdList.Price</source>
+            <target>Prix</target>
+        </trans-unit>
+
+
+
+
+        <!--ADS ADD RELATED LOCS-->
+        <trans-unit id="AdNew.Title">
+            <source>AdNew.Title</source>
+            <target>Déposer une annonce</target>
+        </trans-unit>
+        <trans-unit id="AdForm.title">
+            <source>AdForm.title</source>
+            <target>Titre</target>
+        </trans-unit>
+        <trans-unit id="AdForm.description">
+            <source>AdForm.description</source>
+            <target>Description</target>
+        </trans-unit>
+        <trans-unit id="AdForm.city">
+            <source>AdForm.city</source>
+            <target>Ville</target>
+        </trans-unit>
+        <trans-unit id="AdForm.zip">
+            <source>AdForm.zip</source>
+            <target>Code postal</target>
+        </trans-unit>
+        <trans-unit id="AdForm.price">
+            <source>AdForm.price</source>
+            <target>Prix</target>
+        </trans-unit>
+        <trans-unit id="AdForm.category">
+            <source>AdForm.category</source>
+            <target>Catégorie</target>
+        </trans-unit>
+        <trans-unit id="AdForm.placeholder">
+            <source>AdForm.placeholder</source>
+            <target> -- Choisir une Catégorie -- </target>
+        </trans-unit>
+
+        </body>
+    </file>
+</xliff>

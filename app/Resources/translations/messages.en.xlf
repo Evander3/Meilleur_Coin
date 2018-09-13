@@ -5,6 +5,15 @@
           datatype="plaintext"
           original="file.ext">
         <body>
+            <trans-unit id="Main.SiteName">
+                <source>Main.SiteName</source>
+                <target>Le Meilleur Coin</target>
+            </trans-unit>
+            <trans-unit id="Navbar.HomeLabel">
+                <source>MNavbar.HomeLabel</source>
+                <target>Accueil</target>
+            </trans-unit>
+
             <trans-unit id="index_locale">
                 <source>le locale est</source>
                 <target>the locale is</target>
@@ -13,6 +22,11 @@
             <trans-unit id="Form.catName">
                 <source>CategoryForm.catName</source>
                 <target>Category name</target>
+            </trans-unit>
+
+            <trans-unit id="Navbar.ToggleNavigation">
+                <source>Navbar.ToggleNavigation</source>
+                <target>Navigation</target>
             </trans-unit>
 
             <trans-unit id="AdForm.title">
@@ -43,7 +57,6 @@
                 <source>AdForm.placeholder</source>
                 <target> -- Choose a Category -- </target>
             </trans-unit>
-
         </body>
     </file>
 </xliff>

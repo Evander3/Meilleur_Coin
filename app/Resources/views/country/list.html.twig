@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} - Liste des pays {% endblock %}
+
+{% block body %}
+    <h1><span>Liste des pays</span></h1>
+    {#avec app.user on peut récupérer dees infos sur le user comme son username
+    il faut par contre bien sur vérifier que app.user est set sinon y a bug#}
+    {% if app.user %}
+        <h5><em>Bonjour, je suis {{ app.user.username }}</em></h5>
+    {% endif %}
+
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Description</th>
+                    </tr>
+                    {%  for country in countries %}
+                        <tr>
+                            <td>{{ country.name }}</td>
+                            <td>{{ country.description }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    </div>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('country_new') }}">Créer un Pays</a>
+    {% endif %}
+{% endblock %}
+
