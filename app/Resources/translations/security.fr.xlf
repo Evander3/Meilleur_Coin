@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en"
+          target-language="fr"
+          datatype="plaintext"
+          original="file.ext">
+        <body>
+            <!--syntax :-->
+            <!--{{ "defaultLoc"|trans }}            -->
+
+            <!--SECURITY RELATED LOCS-->
+            <trans-unit id="Security.Title">
+                <source>Security.Title</source>
+                <target>Connexion</target>
+            </trans-unit>
+            <trans-unit id="Security.UserName">
+                <source>Security.UserName</source>
+                <target>Nom d'utilisateur :</target>
+            </trans-unit>
+            <trans-unit id="Security.Password">
+                <source>Security.Password</source>
+                <target>Mot de passe :</target>
+            </trans-unit>
+            <trans-unit id="Security.Login">
+                <source>Security.Login</source>
+                <target>Se Connecter</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

@@ -13,7 +13,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends Controller
 {
     /**
-     * @Route(name="login", path="/login")
+     * @Route(name="login", path="/{_locale}/login")
      */
     public function loginAction(AuthenticationUtils $authenticationUtils)
     {

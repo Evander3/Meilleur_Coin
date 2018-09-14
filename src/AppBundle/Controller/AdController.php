@@ -16,7 +16,7 @@ use AppBundle\Form\AdType;
 use DateTime;
 
 /**
- * @Route(name="ad_", path="/ad")
+ * @Route(name="ad_", path="/{_locale}/ad")
  */
 class AdController extends Controller
 {
@@ -67,6 +67,7 @@ class AdController extends Controller
 
 
         //edit :
+        $old_title = $extracted->getTitle();
         $extracted->setTitle(ucfirst(strtolower(str_replace(' ','_',trim($extracted->getTitle())))));
         $this
             ->getDoctrine()
@@ -74,7 +75,7 @@ class AdController extends Controller
             ->flush()
         ;
 
-        return new Response('<html><body><h1>Edit of \''.$extracted->getTitle().'\' done</h1></body></html>');
+        return new Response("<html><body><h1>Edit of '$old_title' into'".$extracted->getTitle()."' done</h1></body></html>");
 
     }
 

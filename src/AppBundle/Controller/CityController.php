@@ -18,7 +18,7 @@ use Symfony\Component\Validator\Constraints\Country;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
- * @Route(name="city_", path="/city")
+ * @Route(name="city_", path="/{_locale}/city")
  */
 class CityController extends Controller
 {
@@ -120,7 +120,7 @@ class CityController extends Controller
     {
         // La méthode redirectToRoute  permet de faire une redirection 302 vers une autre url
         return $this->redirectToRoute('city_list');
-        return new Response('<html><body>Remove : '.$id.'</body></html>');
+//        return new Response('<html><body>Remove : '.$id.'</body></html>');
     }
 
     /**
@@ -148,7 +148,9 @@ class CityController extends Controller
      *
      * @Route(name="list", path="/list")
      */
-    public function listAction(RouterInterface $router)
+    public function listAction(
+        RouterInterface $router
+    )
     {
         // grâce à la méthode generateUrl on est en mesure de générer à la volée
         // une url vers une autre route en lui passant un tableau si besoin est.
@@ -156,13 +158,21 @@ class CityController extends Controller
 
         // Si on hérite pas de Controller, on va pouvoir faire la même chose
         // grâce au service Router
-//        $url = $router->generate('city_remove', ['id'=>9]);
+        $url = $router->generate('city_remove', ['id'=>9]);
 //        return new Response('List cities <a href="'.$url.'">Supprimer !</a>');
+
+        dump($url);
+
+
+
         $cities = $this
             ->getDoctrine()
             ->getRepository(City::class)
             ->findAll()
         ;
+
+
+        $cityRouter = $this->container->get('AppBundle\Router\CityRouter');
 
         // on créé le QueryBuilder à partir de l'entitymanager
         $queryBuilder = $this

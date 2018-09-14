@@ -11,18 +11,28 @@
             <div id="welcome">
                 <table>
                     <tr>
-                        <th>{{ "AdList.Name"|trans }}</th>
-                        <th>{{ "AdList.Price"|trans }}</th>
+                        <th>{{ "AdList.NameColTitle"|trans }}</th>
+                        <th>{{ "AdList.PriceColTitle"|trans }}</th>
+                        <th>{{ "AdList.ModifyColTitle"|trans }}</th>
                     </tr>
                     {%  for ad in ads %}
                         <tr>
                             <td>{{ ad.title }}</td>
                             <td>{{ ad.price }}</td>
+                            <td><a href="{{ path('ad_edit', { 'id' : ad.id }) }}">{{ "AdList.ModifyButton"|trans }}</a></td>
                         </tr>
                     {% endfor %}
                 </table>
             </div>
 
+        </div>
+
+        <div>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('ad_new') }}">{{ "AdList.CreateAddButton"|trans }}</a>
+            {% else %}
+                <a href="{{ path('user_signIn') }}">{{ "AdList.SignUpToPost"|trans }}</a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

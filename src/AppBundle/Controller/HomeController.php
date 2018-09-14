@@ -30,19 +30,23 @@ class HomeController extends Controller
         return new Response("<html><body>You're on the CGU page, congratulations !</body></html>");
     }
 
+
+
     /**
-     * @Route(name="showIndex", path="/index")
+     * @Route(name="gotoIndex", path="/")
+     * @Route(name="index", path="/index")
+     */
+    public function gotoIndexAction(Request $request)
+    {
+        $locale = $request->getLocale();
+        return $this->redirectToRoute('home_showIndex');
+    }
+
+    /**
+     * @Route(name="showIndex", path="/{_locale}/index", requirements={"_locale" = "fr|en"})
      */
     public function showIndexAction()
     {
         return $this->render('index/index.html.twig');
-    }
-
-    /**
-     * @Route(name="gotoIndex", path="/")
-     */
-    public function gotoIndexAction()
-    {
-        return $this->redirectToRoute('home_showIndex');
     }
 }

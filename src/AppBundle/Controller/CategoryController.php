@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- * @Route(name="category_", path="/category")
+ * @Route(name="category_", path="/{_locale}/category")
  */
 class CategoryController extends Controller
 {

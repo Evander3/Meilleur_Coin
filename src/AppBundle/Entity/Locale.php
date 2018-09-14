@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Role
+ * Locale
  *
- * @ORM\Table(name="roles")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\RoleRepository")
+ * @ORM\Table(name="locales")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\LocaleRepository")
  */
-class Role
+class Locale
 {
     /**
      * @var int
@@ -24,16 +24,16 @@ class Role
     /**
      * @var string
      *
-     * @ORM\Column(name="role_name", type="string", length=255, unique=true)
+     * @ORM\Column(name="locale_name", type="string", length=255, unique=true)
      */
-    private $role_name;
+    private $locale_name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
-    private $description;
+    private $locale_desc;
 
     /**
      * Get id
@@ -46,51 +46,51 @@ class Role
     }
 
     /**
-     * Set name
+     * Set locale_name
      *
-     * @param string $name
+     * @param string $locale_name
      *
-     * @return Role
+     * @return Locale
      */
-    public function setName($role)
+    public function setName($locale_name)
     {
-        $this->role = $role;
+        $this->locale_name = $locale_name;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get locale_name
      *
      * @return string
      */
-    public function getRoleName()
+    public function getName()
     {
-        return $this->role_name;
+        return $this->locale_name;
     }
 
     /**
-     * Set description
+     * Set locale_desc
      *
-     * @param string $description
+     * @param string $locale_desc
      *
-     * @return Role
+     * @return Locale
      */
-    public function setDescription($description)
+    public function setDescription($locale_desc)
     {
-        $this->description = $description;
+        $this->locale_desc = $locale_desc;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get locale_desc
      *
      * @return string
      */
     public function getDescription()
     {
-        return $this->description;
+        return $this->locale_desc;
     }
 
     /**
@@ -100,7 +100,7 @@ class Role
      */
     public function __toString()
     {
-        return ucfirst($this->role);
+        return ucfirst($this->locale_desc);
     }
 }
 

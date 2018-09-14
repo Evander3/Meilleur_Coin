@@ -7,9 +7,9 @@
     <div id="wrapper">
         <div id="container">
             <div id="welcome">
-                <h1><span>Bienvenue sur</span> Le Meilleur Coin </h1>
+                <h1><span>{{ "Main.WelcomeTo"|trans }}</span> {{ "Main.SiteName"|trans }} </h1>
 
-                {% trans %}le locale est{%  endtrans %} {{ app.request.locale }}.
+                {{ "Main.Locale_lang"|trans }} {{ app.request.locale }}.
             </div>
 
         </div>

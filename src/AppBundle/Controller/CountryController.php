@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route(name="country_", path="/country")
+ * @Route(name="country_", path="/{_locale}/country")
  */
 class CountryController extends Controller
 {

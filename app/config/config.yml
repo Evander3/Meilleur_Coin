@@ -22,7 +22,7 @@ framework:
     validation: { enable_annotations: true }
     #serializer: { enable_annotations: true }
 #    default_locale: '%locale%'
-    default_locale: 'en'
+    default_locale: 'fr'
     trusted_hosts: ~
     session:
         # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
@@ -33,6 +33,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig', 'php']
 
 # Twig Configuration
 twig:

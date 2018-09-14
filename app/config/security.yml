@@ -13,7 +13,7 @@ security:
         db:
           entity:
             class: AppBundle:User
-            property: userName
+            property: username
 
     encoders:
       AppBundle\Entity\User: bcrypt
@@ -44,4 +44,4 @@ security:
               target: /
 
     access_control:
-      - {path: ^/country/new, roles: ROLE_ADMIN}
+      - {path: ^/country/new, roles: ADMIN}

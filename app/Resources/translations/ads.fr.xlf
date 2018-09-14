@@ -11,23 +11,38 @@
         <!--ADS LIST RELATED LOCS-->
 
         <trans-unit id="AdList.PageTitle">
-            <source>AdList.Title</source>
+            <source>AdList.PageTitle</source>
             <target>Liste des annonces</target>
         </trans-unit>
         <trans-unit id="AdList.Title">
             <source>AdList.Title</source>
             <target>Liste des annonces</target>
         </trans-unit>
-        <trans-unit id="AdList.Name">
-            <source>AdList.Name</source>
+        <trans-unit id="AdList.NameColTitle">
+            <source>AdList.NameColTitle</source>
             <target>Nom de l'annonce</target>
         </trans-unit>
-        <trans-unit id="AdList.Price">
-            <source>AdList.Price</source>
+        <trans-unit id="AdList.PriceColTitle">
+            <source>AdList.PriceColTitle</source>
             <target>Prix</target>
         </trans-unit>
+        <trans-unit id="AdList.ModifyColTitle">
+            <source>AdList.ModifyColTitle</source>
+            <target>Modifier</target>
+        </trans-unit>
 
-
+        <trans-unit id="AdList.ModifyButton">
+            <source>AdList.ModifyButton</source>
+            <target>Modifier</target>
+        </trans-unit>
+        <trans-unit id="AdList.CreateAddButton">
+            <source>AdList.CreateAddButton</source>
+            <target>Créer une annonce</target>
+        </trans-unit>
+        <trans-unit id="AdList.SignUpToPost">
+            <source>AdList.SignUpToPost</source>
+            <target>S'inscrire pour poster une annonce</target>
+        </trans-unit>
 
 
         <!--ADS ADD RELATED LOCS-->

@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\JoinColumn;
+use AppBundle\Entity\Role;
 
 /**
 * @ORM\Table(name="app_users")
@@ -50,7 +51,14 @@ class User implements UserInterface, \Serializable
      * @ManyToOne(targetEntity="Role")
      * @JoinColumn(name="role_name", referencedColumnName="id")
      */
-    private $roles;
+    private $role;
+
+    /**
+     * @ORM\Column(type="integer", length=1, unique=false)
+     * @ManyToOne(targetEntity="Locale")
+     * @JoinColumn(name="locale_name", referencedColumnName="id")
+     */
+    private $user_locale;
 
     /**
     * @ORM\Column(name="is_active", type="boolean")
@@ -126,11 +134,22 @@ class User implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        return $this->roles;
+        return $this->Role->getRoleName();
     }
-    public function setRoles($roles)
+    public function setRole($role)
     {
-        $this->roles = $roles;
+        $this->role = $role;
+
+        return $this;
+    }
+
+    public function getUserLocale()
+    {
+        return $this->user_locale;
+    }
+    public function setUserLocale($user_locale)
+    {
+        $this->user_locale = $user_locale;
 
         return $this;
     }

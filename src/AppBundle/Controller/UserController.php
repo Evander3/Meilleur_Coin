@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class UserController
- * @Route(name="user_", path="/user")
+ * @Route(name="user_", path="/{_locale}/user")
  */
 class UserController extends Controller
 {

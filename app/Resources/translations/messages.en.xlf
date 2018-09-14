@@ -10,13 +10,13 @@
                 <target>Le Meilleur Coin</target>
             </trans-unit>
             <trans-unit id="Navbar.HomeLabel">
-                <source>MNavbar.HomeLabel</source>
+                <source>Navbar.HomeLabel</source>
                 <target>Accueil</target>
             </trans-unit>
 
-            <trans-unit id="index_locale">
-                <source>le locale est</source>
-                <target>the locale is</target>
+            <trans-unit id="Main.Locale_lang">
+                <source>Main.Locale_lang</source>
+                <target>The website is in </target>
             </trans-unit>
 
             <trans-unit id="Form.catName">
